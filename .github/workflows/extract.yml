@@ -1,0 +1,50 @@
+name: M3U8 Extract Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run Script
+        run: node extract.js
+
+      - name: Setup Git
+        run: |
+          git config user.name "m3u8-bot"
+          git config user.email "bot@users.noreply.github.com"
+
+      # ✅ Commit FIRST
+      - name: Commit Changes
+        run: |
+          git add m3u8.json
+          git commit -m "Update m3u8" || echo "No changes"
+
+      # ✅ Then Pull
+      - name: Pull Latest
+        run: git pull origin main --rebase
+
+      # ✅ Then Push
+      - name: Push
+        run: git push origin main

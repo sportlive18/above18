@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- ── PRIMARY SEO (updated dynamically via JS) ── -->
+<title id="metaTitle">Watch Hot Webseries Online HD - Hitmaal Premium Player</title>
+<meta name="description" id="metaDesc" content="Stream hot webseries, ullu webseries, and premium model videos in crystal clear HD. Watch now on Hitmaal's advanced video player with zero buffering.">
+<meta name="keywords" content="watch hot webseries, ullu webseries player, stream model videos, hitmaal player, free web series hd">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Hitmaal">
+<link rel="canonical" href="https://hitmaal.in/player.html" id="canonicalTag">
+<meta name="theme-color" content="#080608">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- ── OPEN GRAPH (updated dynamically) ── -->
+<meta property="og:title" id="ogTitle" content="Watch Hot Webseries HD - Hitmaal Player">
+<meta property="og:description" id="ogDesc" content="Premium video player for hot webseries, ullu originals, and model videos. Stream in HD quality.">
+<meta property="og:type" content="video.other">
+<meta property="og:url" id="ogUrl" content="https://hitmaal.in/player.html">
+<meta property="og:image" id="ogImage" content="https://hitmaal.in/player-preview.jpg">
+<meta property="og:site_name" content="Hitmaal">
+
+<!-- ── TWITTER ── -->
+<meta name="twitter:card" content="player">
+<meta name="twitter:title" id="twTitle" content="Watch Hot Webseries HD - Hitmaal">
+<meta name="twitter:description" id="twDesc" content="Stream premium webseries in stunning HD on Hitmaal.">
+<meta name="twitter:site" content="@hitmaal">
+
+<!-- ── VideoObject Schema (updated dynamically) ── -->
+<script type="application/ld+json" id="videoSchema">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Hot Webseries - Hitmaal",
+  "description": "Watch hot webseries online free in HD on Hitmaal.",
+  "thumbnailUrl": "https://hitmaal.in/player-preview.jpg",
+  "uploadDate": "2025-01-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hitmaal",
+    "logo": { "@type": "ImageObject", "url": "https://hitmaal.in/logo.png" }
+  }
+}
+</script>
+
+<!-- ── PRECONNECTS ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://hitmaal.in">
+
+<!-- ── FONTS ── -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- ── Plyr ── -->
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+<!-- ── HLS.js ── -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+
+<!-- ── Google Analytics ── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E2FE37MGBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E2FE37MGBK');
+</script>
+
+<style>
+/* ─── DESIGN TOKENS ──────────────────────────────────────── */
+:root {
+  --bg:         #080608;
+  --bg2:        #0e0b0f;
+  --surface:    #120f14;
+  --surface2:   #1a1520;
+  --border:     rgba(255,255,255,0.07);
+  --border-hot: rgba(220,38,38,0.45);
+  --red:        #e02020;
+  --red-glow:   rgba(220,38,38,0.5);
+  --gold:       #f0b429;
+  --gold-dim:   rgba(240,180,41,0.15);
+  --white:      #ffffff;
+  --muted:      #7a7085;
+  --text:       #d4cede;
+  --font-head:  'Syne', sans-serif;
+  --font-body:  'DM Sans', sans-serif;
+  --radius:     16px;
+  --radius-lg:  24px;
+  --transition: cubic-bezier(0.23, 1, 0.32, 1);
+  --header-h:   68px;
+  --nav-h:      64px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(220,38,38,0.07) 0%, transparent 60%);
+}
+
+::-webkit-scrollbar { width: 5px; background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#e02020,#9b1111); border-radius: 99px; }
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s var(--transition);
+}
+.site-header.scrolled {
+  background: rgba(8,6,8,0.93);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom-color: var(--border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.header-logo { height: 40px; width: auto; object-fit: contain; }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s var(--transition);
+  font-family: var(--font-body);
+}
+.back-btn:hover {
+  background: rgba(220,38,38,0.12);
+  border-color: var(--border-hot);
+  color: var(--white);
+}
+.back-btn i { color: var(--red); font-size: 12px; }
+
+/* ─── MAIN LAYOUT ─────────────────────────────────────────── */
+.page-wrap {
+  padding-top: calc(var(--header-h) + 14px);
+  padding-bottom: calc(var(--nav-h) + 16px);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.player-layout { display: flex; flex-direction: column; gap: 0; }
+@media (min-width: 1024px) {
+  .player-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .player-main { flex: 1; min-width: 0; }
+  .player-sidebar {
+    width: 340px;
+    flex-shrink: 0;
+    position: sticky;
+    top: calc(var(--header-h) + 14px);
+    max-height: calc(100vh - var(--header-h) - var(--nav-h) - 28px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}
+
+/* ─── VIDEO PLAYER ────────────────────────────────────────── */
+.player-shell {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+@media (max-width: 1023px) { .player-shell { border-radius: 0; } }
+@media (min-width: 1024px) {
+  .player-shell {
+    border-radius: var(--radius-lg);
+    box-shadow:
+      0 32px 64px -16px rgba(0,0,0,0.9),
+      0 0 0 1px rgba(220,38,38,0.15);
+  }
+}
+
+/* Plyr red theme */
+.plyr { font-family: var(--font-body); }
+.plyr--video { background: #000; }
+.plyr__control--overlaid {
+  background: rgba(220,38,38,0.88) !important;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(220,38,38,0.5);
+  transition: all 0.25s var(--transition);
+}
+.plyr__control--overlaid:hover {
+  background: var(--red) !important;
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(220,38,38,0.7);
+}
+.plyr--video .plyr__controls {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
+  padding: 18px 14px 14px;
+}
+.plyr--full-ui input[type=range] { color: var(--red); }
+.plyr__control { color: #fff; transition: background 0.2s; }
+.plyr__control:hover { background: rgba(220,38,38,0.7) !important; }
+.plyr__menu__container {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.plyr__menu__container .plyr__control { color: var(--text); }
+.plyr__menu__container .plyr__control:hover { background: rgba(220,38,38,0.2) !important; color: #fff; }
+.plyr__menu__container [role=menuitemradio][aria-checked=true]::before { background: var(--red); }
+.plyr__tooltip {
+  background: var(--surface2);
+  color: var(--white);
+  border: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+.plyr__tooltip::before { border-top-color: var(--surface2); }
+
+/* ─── VIDEO INFO ──────────────────────────────────────────── */
+.video-info { padding: 16px 16px 0; }
+@media (min-width: 1024px) { .video-info { padding: 16px 0 0; } }
+
+.video-title {
+  font-family: var(--font-head);
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.video-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.meta-chip { display: flex; align-items: center; gap: 5px; }
+.meta-chip i { color: var(--red); font-size: 10px; }
+.meta-chip.gold i { color: var(--gold); }
+
+.video-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.vtag { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+.vtag-red    { background: rgba(220,38,38,0.12); color: #f87171; border: 1px solid rgba(220,38,38,0.25); }
+.vtag-gold   { background: rgba(240,180,41,0.12); color: #fbbf24; border: 1px solid rgba(240,180,41,0.25); }
+.vtag-purple { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+
+.info-divider { height: 1px; background: var(--border); margin: 0 0 18px; }
+@media (min-width: 1024px) { .info-divider { display: none; } }
+
+/* ─── SIDEBAR ─────────────────────────────────────────────── */
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 2;
+}
+@media (min-width: 1024px) { .sidebar-head { padding: 0 0 12px; background: transparent; } }
+
+.sidebar-title {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sidebar-title::before {
+  content: '';
+  display: block;
+  width: 4px; height: 18px;
+  background: linear-gradient(180deg, var(--red), #9b1111);
+  border-radius: 2px;
+}
+.hot-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(220,38,38,0.1);
+  border: 1px solid rgba(220,38,38,0.25);
+  border-radius: 99px;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #f87171;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.live-dot {
+  width: 5px; height: 5px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: blink 1.2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity:1; box-shadow: 0 0 0 0 var(--red-glow); }
+  50% { opacity:0.5; box-shadow: 0 0 5px 2px var(--red-glow); }
+}
+
+/* Watch card — horizontal */
+.watch-list { padding: 0 16px 10px; display: flex; flex-direction: column; gap: 10px; }
+@media (min-width: 1024px) { .watch-list { padding: 0 0 10px; } }
+
+.watch-card {
+  display: flex;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s var(--transition);
+  text-decoration: none;
+}
+.watch-card:hover {
+  border-color: var(--border-hot);
+  background: var(--surface2);
+  transform: translateX(3px);
+  box-shadow: 0 8px 20px -6px rgba(0,0,0,0.5), 0 0 0 1px rgba(220,38,38,0.15);
+}
+.watch-card.active-card {
+  border-color: rgba(220,38,38,0.5);
+  background: rgba(220,38,38,0.06);
+}
+.wc-thumb {
+  position: relative;
+  width: 120px;
+  flex-shrink: 0;
+  height: 68px;
+  overflow: hidden;
+  background: var(--bg2);
+}
+.wc-thumb img { width:100%; height:100%; object-fit:cover; transition: transform 0.4s var(--transition); }
+.watch-card:hover .wc-thumb img { transform: scale(1.06); }
+.wc-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.watch-card:hover .wc-overlay { opacity: 1; }
+.wc-play {
+  width: 28px; height: 28px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 14px var(--red-glow);
+}
+.wc-play i { font-size: 9px; color: #fff; margin-left: 1px; }
+.wc-dur {
+  position: absolute; bottom: 4px; right: 4px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 9px; font-weight: 700;
+  color: rgba(255,255,255,0.85);
+}
+.wc-body {
+  flex: 1; min-width: 0;
+  padding: 8px 10px 8px 0;
+  display: flex; flex-direction: column;
+  justify-content: center; gap: 4px;
+}
+.wc-title {
+  font-family: var(--font-head);
+  font-size: 12px; font-weight: 700;
+  color: var(--white); line-height: 1.35;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.wc-meta { font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.wc-meta i { font-size: 8px; color: var(--red); }
+.wc-new {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--red), #9b1111);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 8px; font-weight: 800;
+  color: #fff; letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* Skeletons */
+.wc-skeleton {
+  display: flex; gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 68px;
+}
+.wcs-thumb {
+  width: 120px; height: 68px; flex-shrink: 0;
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 300% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.wcs-body { flex:1; padding: 10px 10px 10px 0; display:flex; flex-direction:column; gap:6px; justify-content:center; }
+.wcs-line { height: 9px; border-radius: 5px; background: var(--surface2); }
+.wcs-line.short { width: 55%; }
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── SEO BLOCK ───────────────────────────────────────────── */
+.seo-bar {
+  margin: 20px 16px 0;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+}
+.seo-bar::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), transparent);
+}
+@media (min-width: 1024px) { .seo-bar { margin: 20px 0 0; } }
+.seo-bar strong { color: #f87171; font-weight: 600; }
+
+/* ─── BOTTOM NAV ──────────────────────────────────────────── */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(8,6,8,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 900;
+}
+.nav-item {
+  text-decoration: none;
+  color: var(--muted);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  transition: color 0.2s;
+  padding: 6px 14px;
+  border-radius: 10px;
+  position: relative;
+}
+.nav-item .material-icons { font-size: 22px; transition: transform 0.2s; }
+.nav-item.active { color: var(--white); }
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 2px;
+  background: var(--red);
+  border-radius: 0 0 2px 2px;
+}
+.nav-item:hover { color: var(--white); }
+.nav-item:hover .material-icons { transform: translateY(-2px); }
+
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header id="siteHeader" class="site-header">
+  <a href="/" aria-label="Hitmaal Home">
+    <img src="https://hitmaal.in/logo.png" class="header-logo" alt="Hitmaal">
+  </a>
+  <a href="/" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back to Home
+  </a>
+</header>
+
+<!-- ═══ PAGE ══════════════════════════════════════════════════ -->
+<div class="page-wrap">
+  <div class="player-layout">
+
+    <!-- ── LEFT: Player + Info ──────────────────────────────── -->
+    <div class="player-main">
+      <div class="player-shell">
+        <video id="player" playsinline controls autoplay poster="https://hmaal.net/wp-content/uploads/2025/03/Chaashni-Episode-6.webp">
+  <source src="https://cdn.bmaal.com/ULLU/Chaashni D1/Chaashni Episode 6.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256{{stream_url}}X-Amz-Credential=fc6b055d91149af74bdb2e92c80939a2/20260323/auto/s3/aws4_request{{stream_url}}X-Amz-Date=20260323T115332Z{{stream_url}}X-Amz-Expires=604800{{stream_url}}X-Amz-SignedHeaders=host{{stream_url}}X-Amz-Signature=87741981e150268955e87c7f00080d608ba073e8ecd022800ffdef37138a5ba5" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-info">
+        <h1 class="video-title">Chaashni Episode 6</h1>
+        <div class="video-meta">
+          <span class="meta-chip"><i class="fas fa-calendar-alt"></i><span id="videoTime">New Release</span></span>
+          <span class="meta-chip gold"><i class="fas fa-clock"></i><span id="videoDur">HD</span></span>
+          <span class="meta-chip"><i class="fas fa-hd"></i><span>Premium HD</span></span>
+          <span class="meta-chip gold"><i class="fas fa-infinity"></i><span>24/7 Streaming</span></span>
+        </div>
+        <div class="video-tags">
+          <span class="vtag vtag-red">Hot</span>
+          <span class="vtag vtag-gold">Webseries</span>
+          <span class="vtag vtag-purple">Free HD</span>
+        </div>
+        <div class="info-divider"></div>
+      </div>
+
+      <!-- SEO paragraph — title injected by JS -->
+      <div class="seo-bar" id="seoBar">
+        Watch the latest <strong>hot webseries, ullu webseries</strong>, and premium model videos in stunning HD quality.
+        Hitmaal offers the best streaming experience with zero buffering and daily updates.
+        Explore more exclusive content in the sidebar.
+      </div>
+    </div>
+
+    <!-- ── RIGHT: Watch More ─────────────────────────────────── -->
+    <aside class="player-sidebar" aria-label="Watch more videos">
+      <div class="sidebar-head">
+        <div class="sidebar-title">Watch More</div>
+        <div class="hot-pill"><span class="live-dot"></span> Trending</div>
+      </div>
+      <div class="watch-list" id="watchList">
+        <div class="wc-skeleton"><div class="wcs-thumb"></div><div class="wcs-body"><div class="wcs-line"></div><div class="wcs-line short"></div></div></div>
+        <div class="wc-skeleton"><div class="wcs-thumb"></div><div class="wcs-body"><div class="wcs-line"></div><div class="wcs-line short"></div></div></div>
+        <div class="wc-skeleton"><div class="wcs-thumb"></div><div class="wcs-body"><div class="wcs-line"></div><div class="wcs-line short"></div></div></div>
+        <div class="wc-skeleton"><div class="wcs-thumb"></div><div class="wcs-body"><div class="wcs-line"></div><div class="wcs-line short"></div></div></div>
+        <div class="wc-skeleton"><div class="wcs-thumb"></div><div class="wcs-body"><div class="wcs-line"></div><div class="wcs-line short"></div></div></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ═══ BOTTOM NAV ════════════════════════════════════════════ -->
+<nav class="bottom-nav" aria-label="Main navigation">
+  <a href="/" class="nav-item">
+    <span class="material-icons">home</span>
+    <span>Home</span>
+  </a>
+  <a href="/category" class="nav-item">
+    <span class="material-icons">grid_view</span>
+    <span>Category</span>
+  </a>
+  <a href="/webseries" class="nav-item active">
+    <span class="material-icons">movie</span>
+    <span>Webseries</span>
+  </a>
+  <a href="/more" class="nav-item">
+    <span class="material-icons">menu</span>
+    <span>More</span>
+  </a>
+</nav>
+
+<!-- ═══ SCRIPTS ═══════════════════════════════════════════════ -->
+<script>
+
+const params  = new URLSearchParams(window.location.search);
+
+let currentUrl   = params.get('video') || '';
+let currentTitle = params.get('title') || 'Hot Webseries';
+let currentThumb = params.get('thumb') || 'https://hitmaal.in/player-preview.jpg';
+let currentTime  = params.get('time')  || 'New Release';
+let currentDur   = params.get('dur')   || 'HD';
+
+const videoEl   = document.getElementById('player');
+const titleEl   = document.getElementById('videoTitle');
+const timeEl    = document.getElementById('videoTime');
+const durEl     = document.getElementById('videoDur');
+const watchList = document.getElementById('watchList');
+
+let plyrInstance = null;
+let hlsInstance  = null;
+
+/* ── SEO helpers ───────────────────────────────────────────── */
+function updateSEO(title, thumb) {
+  const t = title || 'Hot Webseries';
+  const pageTitle = `Watch ${t} Full HD Online Free | Hitmaal`;
+  const desc      = `Watch ${t} full HD online free on Hitmaal. Stream now without ads, zero buffering, premium quality.`;
+  const url       = window.location.href;
+
+  // <title>
+  document.title = pageTitle;
+  document.getElementById('metaTitle').textContent = pageTitle;
+
+  // description
+  document.getElementById('metaDesc').setAttribute('content', desc);
+
+  // canonical
+  document.getElementById('canonicalTag').setAttribute('href', url);
+
+  // OG
+  document.getElementById('ogTitle').setAttribute('content', pageTitle);
+  document.getElementById('ogDesc').setAttribute('content', desc);
+  document.getElementById('ogUrl').setAttribute('content', url);
+  if (thumb) document.getElementById('ogImage').setAttribute('content', thumb);
+
+  // Twitter
+  document.getElementById('twTitle').setAttribute('content', pageTitle);
+  document.getElementById('twDesc').setAttribute('content', desc);
+
+  // VideoObject schema
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": t,
+    "description": desc,
+    "thumbnailUrl": thumb || 'https://hitmaal.in/player-preview.jpg',
+    "uploadDate": new Date().toISOString().split('T')[0],
+    "embedUrl": url,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hitmaal",
+      "logo": { "@type": "ImageObject", "url": "https://hitmaal.in/logo.png" }
+    }
+  };
+  document.getElementById('videoSchema').textContent = JSON.stringify(schema, null, 2);
+
+  // SEO paragraph inside page
+  document.getElementById('seoBar').innerHTML =
+    `Watch <strong>${esc(t)}</strong> full HD online free on Hitmaal. ` +
+    `Stream the latest <strong>hot webseries, ullu webseries</strong>, and premium model videos ` +
+    `with zero buffering and daily updates. Explore more exclusive content in the sidebar.`;
+}
+
+/* ── Utils ─────────────────────────────────────────────────── */
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g, m =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+/* ── Plyr init ─────────────────────────────────────────────── */
+function initPlyr() {
+  if (plyrInstance) { try { plyrInstance.destroy(); } catch(e){} }
+  plyrInstance = new Plyr(videoEl, {
+    controls: ['play-large','play','progress','current-time','duration','mute','volume','settings','pip','fullscreen'],
+    settings: ['speed'],
+    speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 2] },
+    fullscreen: { enabled: true, fallback: true, iosNative: true },
+    keyboard: { focused: true, global: true },
+    tooltips: { controls: true, seek: true },
+    debug: false
+  });
+  plyrInstance.on('enterfullscreen', () => {
+    screen.orientation?.lock('landscape').catch(() => {});
+  });
+  plyrInstance.on('exitfullscreen', () => {
+    screen.orientation?.unlock?.();
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) screen.orientation?.unlock?.();
+  });
+}
+
+/* ── Load video ────────────────────────────────────────────── */
+function loadVideo(url, title, time, dur, thumb) {
+  titleEl.textContent = title || 'Hot Webseries';
+  timeEl.textContent  = time  || 'New Release';
+  durEl.textContent   = dur   || 'HD';
+
+  // update poster
+  if (thumb) videoEl.setAttribute('data-poster', thumb);
+
+  // update all SEO tags dynamically
+  updateSEO(title, thumb);
+
+  if (hlsInstance) { hlsInstance.destroy(); hlsInstance = null; }
+
+  const isHls = url && url.includes('.m3u8');
+  if (isHls && Hls.isSupported()) {
+    hlsInstance = new Hls({ enableWorker: true, lowLatencyMode: true, maxBufferLength: 30 });
+    hlsInstance.loadSource(url);
+    hlsInstance.attachMedia(videoEl);
+    hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => { plyrInstance?.play(); });
+    hlsInstance.on(Hls.Events.ERROR, (_, d) => {
+      if (d.fatal) {
+        if (d.type === Hls.ErrorTypes.NETWORK_ERROR) hlsInstance.startLoad();
+        else if (d.type === Hls.ErrorTypes.MEDIA_ERROR) hlsInstance.recoverMediaError();
+        else hlsInstance.destroy();
+      }
+    });
+  } else if (url) {
+    videoEl.src = url;
+    videoEl.addEventListener('loadedmetadata', () => plyrInstance?.play(), { once: true });
+  }
+}
+
+/* ── Render watch list ─────────────────────────────────────── */
+function renderWatchList(videos) {
+  watchList.innerHTML = '';
+  if (!videos.length) {
+    watchList.innerHTML = `<div style="text-align:center;padding:32px 0;color:var(--muted);font-size:13px;"><i class="fas fa-film" style="font-size:28px;display:block;margin-bottom:10px;opacity:.4;"></i>More coming soon</div>`;
+    return;
+  }
+  videos.forEach((v, i) => {
+    const title = v.title || 'Hot Webseries';
+    const thumb = v.thumbnail || 'https://via.placeholder.com/240x135/120f14/ffffff?text=Hitmaal';
+    const dur   = v.duration    || 'HD';
+    const time  = v.upload_time || 'New';
+    const isActive = v.stream_url === currentUrl;
+    const isNew    = i < 5;
+
+    const card = document.createElement('div');
+    card.className = 'watch-card' + (isActive ? ' active-card' : '');
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Watch ${title}`);
+    card.innerHTML = `
+      <div class="wc-thumb">
+        <img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy">
+        <div class="wc-overlay"><div class="wc-play"><i class="fas fa-play"></i></div></div>
+        <div class="wc-dur">${esc(dur)}</div>
+      </div>
+      <div class="wc-body">
+        <div class="wc-title">${esc(title)}</div>
+        <div class="wc-meta">
+          <i class="fas fa-calendar-alt"></i>
+          <span>${esc(time)}</span>
+          ${isNew ? '<span class="wc-new">New</span>' : ''}
+        </div>
+      </div>`;
+
+    const play = () => {
+      currentUrl = v.stream_url; currentTitle = title;
+      currentTime = time; currentDur = dur; currentThumb = thumb;
+      const q = `player.html?video=${encodeURIComponent(v.stream_url)}&title=${encodeURIComponent(title)}&time=${encodeURIComponent(time)}&dur=${encodeURIComponent(dur)}&thumb=${encodeURIComponent(thumb)}`;
+      window.history.pushState({}, '', q);
+      loadVideo(v.stream_url, title, time, dur, thumb);
+      document.querySelectorAll('.watch-card').forEach(c => c.classList.remove('active-card'));
+      card.classList.add('active-card');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    card.addEventListener('click', play);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') play(); });
+    watchList.appendChild(card);
+  });
+}
+
+/* ── Fetch data ────────────────────────────────────────────── */
+function fetchData() {
+  fetch(API_URL)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const all = data.videos || [];
+      if (!currentUrl && all.length) {
+        const first = all[0];
+        currentUrl   = first.stream_url;
+        currentTitle = first.title       || 'Hot Webseries';
+        currentTime  = first.upload_time || 'New Release';
+        currentDur   = first.duration    || 'HD';
+        currentThumb = first.thumbnail   || 'https://hitmaal.in/player-preview.jpg';
+        const q = `player.html?video=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(currentTitle)}&time=${encodeURIComponent(currentTime)}&dur=${encodeURIComponent(currentDur)}&thumb=${encodeURIComponent(currentThumb)}`;
+        window.history.replaceState({}, '', q);
+      }
+      loadVideo(currentUrl, currentTitle, currentTime, currentDur, currentThumb);
+      renderWatchList(all);
+    })
+    .catch(() => {
+      if (currentUrl) loadVideo(currentUrl, currentTitle, currentTime, currentDur, currentThumb);
+      watchList.innerHTML = `
+        <div style="text-align:center;padding:24px 0;color:var(--muted);font-size:13px;">
+          <i class="fas fa-exclamation-triangle" style="color:var(--red);display:block;font-size:24px;margin-bottom:8px;"></i>
+          Failed to load
+          <br><button onclick="location.reload()" style="margin-top:10px;background:var(--red);color:#fff;border:none;padding:7px 18px;border-radius:8px;font-size:12px;font-family:var(--font-body);font-weight:700;cursor:pointer;">Retry</button>
+        </div>`;
+    });
+}
+
+/* ── Events ────────────────────────────────────────────────── */
+const hdr = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+
+window.addEventListener('popstate', () => {
+  const p = new URLSearchParams(window.location.search);
+  currentUrl   = p.get('video') || '';
+  currentTitle = p.get('title') || 'Hot Webseries';
+  currentTime  = p.get('time')  || 'New Release';
+  currentDur   = p.get('dur')   || 'HD';
+  currentThumb = p.get('thumb') || 'https://hitmaal.in/player-preview.jpg';
+  if (currentUrl) loadVideo(currentUrl, currentTitle, currentTime, currentDur, currentThumb);
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) plyrInstance?.pause();
+});
+
+/* ── Boot ──────────────────────────────────────────────────── */
+initPlyr();
+// Run initial SEO update from URL params immediately (good for direct links / SEO crawlers)
+if (currentTitle !== 'Hot Webseries') updateSEO(currentTitle, currentThumb);
+
+</script>
+<script>(function(s){s.dataset.zone='10603308',s.src='https://llvpn.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</body>
+</html>

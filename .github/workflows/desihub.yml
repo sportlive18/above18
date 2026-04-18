@@ -1,0 +1,37 @@
+name: DesiHub Scraper
+
+on:
+  workflow_dispatch:   # manual run
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: 📦 Install Dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: ▶️ Run Scraper
+        run: python desihub.py
+
+      - name: 💾 Commit JSON
+        run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@example.com"
+          git add api/desihub.json
+          git commit -m "Update scraped data" || echo "No changes"
+          git push
