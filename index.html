@@ -67,17 +67,6 @@
   "description": "Premium entertainment platform featuring hot webseries, ullu originals, and exclusive model videos."
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://hitmaal.in"},
-    {"@type":"ListItem","position":2,"name":"Hot Webseries","item":"https://hitmaal.in/category/hot-webseries"},
-    {"@type":"ListItem","position":3,"name":"Ullu Webseries","item":"https://hitmaal.in/category/ullu-webseries"}
-  ]
-}
-</script>
 
 <!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -129,7 +118,6 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
-  /* subtle noise texture via SVG data-uri */
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"),
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(220,38,38,0.08) 0%, transparent 60%);
@@ -513,7 +501,6 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
-  /* padding so first/last chips aren't flush to screen edge */
   padding-left: 14px;
   padding-right: 14px;
 }
@@ -533,6 +520,7 @@ body {
   color: var(--text);
   text-decoration: none;
   transition: all 0.2s var(--transition);
+  cursor: pointer;
 }
 .cat-chip:hover,
 .cat-chip.active {
@@ -817,6 +805,16 @@ footer {
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
+
+/* ─── FOLDER FILTER BADGE ─────────────────────────────────── */
+.folder-badge {
+  font-size: 9px;
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
 </style>
 </head>
 
@@ -860,21 +858,17 @@ footer {
     </div>
   </section>
 
-  <!-- ── CATEGORY STRIP ────────────────────────────────────── -->
-  <nav class="cat-strip" aria-label="Browse categories">
-    <a href="/" class="cat-chip active"><i class="fas fa-house"></i> All</a>
-    <a href="/category/viral-girls" class="cat-chip"><i class="fas fa-fire"></i> Viral Girls</a>
-    <a href="/comatozze/" class="cat-chip"><i class="fas fa-film"></i> Comatozze</a>
-    <a href="/category/model-videos" class="cat-chip"><i class="fas fa-user-tie"></i> Model Videos</a>
-    <a href="/category/exclusive" class="cat-chip"><i class="fas fa-gem"></i> Exclusive</a>
-    <a href="/category/indian-web-series" class="cat-chip"><i class="fas fa-tv"></i> Indian Series</a>
+  <!-- ── CATEGORY STRIP (DYNAMIC FROM FOLDERS) ──────────────── -->
+  <nav class="cat-strip" id="categoryStrip" aria-label="Browse categories">
+    <span class="cat-chip active" data-folder="all"><i class="fas fa-house"></i> All</span>
+    <!-- Other folders will be added dynamically -->
   </nav>
 
   <!-- ── VIDEO SECTION ─────────────────────────────────────── -->
   <div style="margin-top:24px;">
     <div class="section-header">
-      <div class="section-title">Latest Releases</div>
-      <a href="/all" class="see-all">View All <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      <div class="section-title" id="sectionTitle">Latest Releases</div>
+      <span id="videoCount" style="font-size:12px;color:var(--muted);"></span>
     </div>
 
     <!-- Skeleton loader -->
@@ -1019,125 +1013,327 @@ function esc(str) {
   return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
-/* ── Video grid ── */
-const API_URL = "https://hitmaal.in/m3u8.json";
-let activeVid = null, unmuteTimer = null;
-const tags = [
-  ['Hot','tag-red'],['Webseries','tag-gold'],['Ullu','tag-purple'],
-  ['HD','tag-gold'],['Exclusive','tag-red'],['Latest','tag-purple']
+/* ─── FOLDER SCANNER ───────────────────────────────────── */
+// List of folders to scan for content
+const FOLDERS = [
+  { name: 'category', label: 'Category', icon: 'fa-folder' },
+  { name: 'comatozze', label: 'Comatozze', icon: 'fa-film' },
+  { name: 'project', label: 'Projects', icon: 'fa-code' },
+  { name: 'ullu', label: 'Ullu Originals', icon: 'fa-crown' },
+  { name: 'webseries', label: 'Webseries', icon: 'fa-tv' }
 ];
 
-fetch(API_URL)
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(data => {
-    document.getElementById('skeletonLoader').style.display = 'none';
-    const wrap = document.getElementById('gridWrap');
-    wrap.style.display = '';
-    const grid = document.getElementById('videosGrid');
-    const items = data.videos || [];
+// Folder display names mapping
+const FOLDER_LABELS = {
+  'category': 'Category',
+  'comatozze': 'Comatozze',
+  'project': 'Projects',
+  'ullu': 'Ullu Originals',
+  'webseries': 'Webseries'
+};
 
-    if (!items.length) {
-      grid.innerHTML = `<div class="empty-state"><i class="fas fa-film"></i><p>New content coming soon. Check back daily!</p></div>`;
-      return;
+// Tag colors for different folders
+const FOLDER_TAGS = {
+  'category': ['Hot', 'tag-red'],
+  'comatozze': ['Exclusive', 'tag-purple'],
+  'project': ['Premium', 'tag-gold'],
+  'ullu': ['Ullu', 'tag-purple'],
+  'webseries': ['Webseries', 'tag-gold']
+};
+
+let allVideos = [];
+let currentFolder = 'all';
+
+/* ─── SCAN FOLDERS FOR VIDEO FILES ────────────────────── */
+async function scanFolder(folderName) {
+  try {
+    // Try to fetch the folder index (works on GitHub Pages)
+    const response = await fetch(`/${folderName}/`);
+    if (!response.ok) return [];
+    
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    // Look for video files in the directory listing
+    const links = doc.querySelectorAll('a');
+    const videoFiles = [];
+    const videoExtensions = ['.mp4', '.m3u8', '.m3u', '.ts', '.mkv', '.avi', '.mov', '.webm'];
+    
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      
+      // Check if it's a video file
+      const ext = href.substring(href.lastIndexOf('.')).toLowerCase();
+      if (videoExtensions.includes(ext)) {
+        // Try to find a thumbnail (same name with .jpg/.png)
+        const baseName = href.substring(0, href.lastIndexOf('.'));
+        videoFiles.push({
+          title: baseName.replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+          stream_url: `/${folderName}/${href}`,
+          thumbnail: `/${folderName}/${baseName}.jpg`,
+          duration: 'HD',
+          upload_time: 'New Release',
+          folder: folderName,
+          source: 'folder'
+        });
+      }
+    });
+    
+    return videoFiles;
+  } catch (e) {
+    console.warn(`Could not scan folder: ${folderName}`, e);
+    return [];
+  }
+}
+
+/* ─── LOAD FROM JSON FILES IN FOLDERS ──────────────────── */
+async function loadFolderJson(folderName) {
+  try {
+    // Try to load m3u8.json or data.json from the folder
+    const jsonFiles = ['m3u8.json', 'data.json', 'ullu.json'];
+    for (const jsonFile of jsonFiles) {
+      try {
+        const response = await fetch(`/${folderName}/${jsonFile}`);
+        if (response.ok) {
+          const data = await response.json();
+          if (data.videos && Array.isArray(data.videos)) {
+            return data.videos.map(v => ({
+              ...v,
+              folder: folderName,
+              source: 'json'
+            }));
+          }
+          if (Array.isArray(data)) {
+            return data.map(v => ({
+              ...v,
+              folder: folderName,
+              source: 'json'
+            }));
+          }
+        }
+      } catch (e) {}
     }
+    return [];
+  } catch (e) {
+    return [];
+  }
+}
 
-    items.forEach((v, i) => {
-      const uid = `v${Date.now()}_${i}`;
-      const url = v.stream_url || '';
-      const thumb = v.thumbnail || 'https://via.placeholder.com/640x360/120f14/ffffff?text=Hitmaal';
-      const title = v.title || 'Hot Webseries';
-      const time = v.upload_time || 'New Release';
-      const dur = v.duration || 'HD';
-      const t1 = tags[i % tags.length];
-      const t2 = tags[(i + 2) % tags.length];
+/* ─── LOAD ROOT M3U8.JSON AS FALLBACK ──────────────────── */
+async function loadRootJson() {
+  try {
+    const response = await fetch('/m3u8.json');
+    if (response.ok) {
+      const data = await response.json();
+      if (data.videos && Array.isArray(data.videos)) {
+        return data.videos.map(v => ({
+          ...v,
+          folder: 'root',
+          source: 'root'
+        }));
+      }
+    }
+    return [];
+  } catch (e) {
+    return [];
+  }
+}
 
-      const card = document.createElement('div');
-      card.className = 'v-card';
-      card.innerHTML = `
-        <a href="player.html?video=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&time=${encodeURIComponent(time)}&dur=${encodeURIComponent(dur)}" style="display:block;text-decoration:none;">
-          <div class="thumb-wrap">
-            <img class="thumb-img" src="${esc(thumb)}" alt="${esc(title)} - Hot Webseries Watch Online" loading="lazy">
-            <video class="thumb-video" id="${uid}" muted loop playsinline preload="none">
+/* ─── MAIN LOAD FUNCTION ────────────────────────────────── */
+async function loadAllContent() {
+  const skeleton = document.getElementById('skeletonLoader');
+  const gridWrap = document.getElementById('gridWrap');
+  const grid = document.getElementById('videosGrid');
+  const categoryStrip = document.getElementById('categoryStrip');
+  
+  let allVideosData = [];
+  let folderVideoCount = {};
+  
+  // Load from each folder
+  for (const folder of FOLDERS) {
+    // Try JSON first
+    let videos = await loadFolderJson(folder.name);
+    
+    // If no JSON, scan for video files
+    if (videos.length === 0) {
+      videos = await scanFolder(folder.name);
+    }
+    
+    if (videos.length > 0) {
+      allVideosData = allVideosData.concat(videos);
+      folderVideoCount[folder.name] = videos.length;
+      
+      // Add folder chip to category strip
+      const chip = document.createElement('span');
+      chip.className = 'cat-chip';
+      chip.dataset.folder = folder.name;
+      chip.innerHTML = `<i class="fas ${folder.icon}"></i> ${folder.label} <span style="font-size:9px;opacity:0.5;margin-left:4px;">${videos.length}</span>`;
+      categoryStrip.appendChild(chip);
+    }
+  }
+  
+  // Also load root m3u8.json as fallback
+  const rootVideos = await loadRootJson();
+  if (rootVideos.length > 0) {
+    allVideosData = allVideosData.concat(rootVideos);
+    folderVideoCount['root'] = rootVideos.length;
+  }
+  
+  // Update video count
+  document.getElementById('videoCount').textContent = `${allVideosData.length} videos`;
+  
+  // Store all videos globally
+  allVideos = allVideosData;
+  
+  // Hide skeleton and show grid
+  skeleton.style.display = 'none';
+  gridWrap.style.display = '';
+  
+  if (allVideos.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-film"></i>
+        <p>No videos found. Please add content to your folders.</p>
+        <p style="font-size:12px;margin-top:8px;color:var(--muted);">Make sure your folders contain .mp4, .m3u8, or .m3u files</p>
+      </div>`;
+    return;
+  }
+  
+  // Render videos
+  renderVideos(allVideos);
+  
+  // Setup folder filter clicks
+  document.querySelectorAll('.cat-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const folder = this.dataset.folder;
+      currentFolder = folder;
+      
+      const title = document.getElementById('sectionTitle');
+      if (folder === 'all') {
+        title.innerHTML = 'All Releases';
+        renderVideos(allVideos);
+      } else {
+        const folderLabel = FOLDER_LABELS[folder] || folder;
+        title.innerHTML = `${folderLabel} Releases`;
+        const filtered = allVideos.filter(v => v.folder === folder);
+        renderVideos(filtered);
+      }
+    });
+  });
+}
+
+/* ─── RENDER VIDEOS ──────────────────────────────────────── */
+function renderVideos(videos) {
+  const grid = document.getElementById('videosGrid');
+  grid.innerHTML = '';
+  
+  if (!videos || videos.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-search"></i>
+        <p>No videos found in this category.</p>
+      </div>`;
+    return;
+  }
+  
+  // Sort by upload time (newest first) or by title
+  videos.sort((a, b) => {
+    if (a.upload_time && b.upload_time) {
+      return new Date(b.upload_time) - new Date(a.upload_time);
+    }
+    return a.title.localeCompare(b.title);
+  });
+  
+  const tags = [
+    ['Hot', 'tag-red'],
+    ['Webseries', 'tag-gold'],
+    ['Ullu', 'tag-purple'],
+    ['HD', 'tag-gold'],
+    ['Exclusive', 'tag-red'],
+    ['Latest', 'tag-purple']
+  ];
+  
+  videos.forEach((v, i) => {
+    const url = v.stream_url || '';
+    const thumb = v.thumbnail || 'https://via.placeholder.com/640x360/120f14/ffffff?text=Hitmaal';
+    const title = v.title || 'Hot Webseries';
+    const time = v.upload_time || 'New Release';
+    const dur = v.duration || 'HD';
+    const folderLabel = FOLDER_LABELS[v.folder] || v.folder || 'Root';
+    
+    // Get folder-specific tags
+    let t1, t2;
+    if (v.folder && FOLDER_TAGS[v.folder]) {
+      t1 = FOLDER_TAGS[v.folder];
+      t2 = tags[(i + 2) % tags.length];
+    } else {
+      t1 = tags[i % tags.length];
+      t2 = tags[(i + 1) % tags.length];
+    }
+    
+    const card = document.createElement('div');
+    card.className = 'v-card';
+    card.innerHTML = `
+      <a href="player.html?video=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&time=${encodeURIComponent(time)}&dur=${encodeURIComponent(dur)}" style="display:block;text-decoration:none;">
+        <div class="thumb-wrap">
+          <img class="thumb-img" src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.src='https://via.placeholder.com/640x360/120f14/ffffff?text=No+Thumbnail'">
+          ${url.endsWith('.mp4') || url.endsWith('.m3u8') ? `
+            <video class="thumb-video" muted loop playsinline preload="none">
               <source src="${esc(url)}" type="video/mp4">
             </video>
-            <div class="thumb-overlay"></div>
-            <div class="play-ring"><i class="fas fa-play"></i></div>
-            <div class="crown-badge"><i class="fas fa-crown"></i></div>
-            <div class="dur-badge"><i class="fas fa-clock" style="font-size:8px;margin-right:3px;"></i>${esc(dur)}</div>
-            ${i < 4 ? '<div class="new-badge">New</div>' : ''}
+          ` : ''}
+          <div class="thumb-overlay"></div>
+          <div class="play-ring"><i class="fas fa-play"></i></div>
+          <div class="crown-badge"><i class="fas fa-crown"></i></div>
+          <div class="dur-badge"><i class="fas fa-clock" style="font-size:8px;margin-right:3px;"></i>${esc(dur)}</div>
+          ${i < 4 ? '<div class="new-badge">New</div>' : ''}
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">${esc(title)}</h3>
+          <div class="card-meta">
+            <i class="fas fa-calendar-alt"></i>
+            <span>${esc(time)}</span>
+            <span class="meta-dot"></span>
+            <span class="folder-badge"><i class="fas fa-folder"></i> ${esc(folderLabel)}</span>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">${esc(title)}</h3>
-            <div class="card-meta">
-              <i class="fas fa-calendar-alt"></i>
-              <span>${esc(time)}</span>
-              <span class="meta-dot"></span>
-              <span>Premium HD</span>
-            </div>
-            <div class="card-tags">
-              <span class="tag ${t1[1]}">${t1[0]}</span>
-              <span class="tag ${t2[1]}">${t2[0]}</span>
-            </div>
+          <div class="card-tags">
+            <span class="tag ${t1[1]}">${t1[0]}</span>
+            <span class="tag ${t2[1]}">${t2[0]}</span>
           </div>
-        </a>
-      `;
-
-      const videoEl = card.querySelector(`#${uid}`);
-
+        </div>
+      </a>
+    `;
+    
+    // Video hover preview
+    const videoEl = card.querySelector('.thumb-video');
+    if (videoEl) {
       card.addEventListener('mouseenter', () => {
-        if (activeVid && activeVid !== videoEl) {
-          activeVid.pause(); activeVid.currentTime = 0; activeVid.muted = true;
-          clearTimeout(unmuteTimer);
-        }
-        videoEl.currentTime = 0; videoEl.muted = true;
+        videoEl.currentTime = 0;
         videoEl.play().catch(() => {});
-        activeVid = videoEl;
-        unmuteTimer = setTimeout(() => {
-          if (activeVid === videoEl && !videoEl.paused) videoEl.muted = false;
-        }, 5000);
       });
-
       card.addEventListener('mouseleave', () => {
-        clearTimeout(unmuteTimer);
-        videoEl.pause(); videoEl.currentTime = 0; videoEl.muted = true;
-        if (activeVid === videoEl) activeVid = null;
+        videoEl.pause();
+        videoEl.currentTime = 0;
       });
-
-      grid.appendChild(card);
-
-      /* Staggered reveal via IntersectionObserver */
-      observer.observe(card);
-    });
-  })
-  .catch(() => {
-    document.getElementById('skeletonLoader').style.display = 'none';
-    const wrap = document.getElementById('gridWrap');
-    wrap.style.display = '';
-    document.getElementById('videosGrid').innerHTML = `
-      <div class="empty-state">
-        <i class="fas fa-exclamation-triangle" style="color:#e02020;"></i>
-        <p style="color:#d4cede;">Content temporarily unavailable.</p>
-        <button class="retry-btn" onclick="location.reload()"><i class="fas fa-redo"></i> Retry</button>
-      </div>`;
-  });
-
-/* IntersectionObserver for card reveal */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, delay) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), delay * 60);
-      observer.unobserve(e.target);
     }
+    
+    grid.appendChild(card);
+    
+    // Staggered reveal
+    setTimeout(() => card.classList.add('visible'), i * 60);
   });
-}, { threshold: 0.08 });
+  
+  // Update video count
+  document.getElementById('videoCount').textContent = `${videos.length} videos`;
+}
 
-/* Pause videos on tab hide */
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden && activeVid) {
-    activeVid.pause(); clearTimeout(unmuteTimer); activeVid = null;
-  }
-});
-
+/* ─── INIT ───────────────────────────────────────────────── */
+// Load all content when page loads
+document.addEventListener('DOMContentLoaded', loadAllContent);
 </script>
 
 </body>
