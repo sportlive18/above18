@@ -1,0 +1,558 @@
+
+#EXTINF:-1 tvg-id="MPD" tvg-logo="https://i.imgur.com/Z7trxue.png" group-title="MPD",MensNeco
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=a4f627d962f2487f9d34c723f662ad5e:76b6fc1d5c60dcbadea1fe42338c95b4
+https://streaml01cf.nxtv.jp/p-menecoch01-amni5j72tc/index1/manifest.mpd
+
+#EXTINF:-1 tvg-id="Babes.TV.cz" tvg-name="Babes TV" tvg-logo="https://www.poda.cz/wp-content/uploads/2024/04/babes-tv-2024.png" video-track="1024x576" group-title="MPD",Babes TV
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_babes/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Pure.Babes.hr" tvg-name="Pure Babes" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/02/babes-pure-tv.png" video-track="1024x576" group-title="MPD",Pure Babes
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_pure_babes/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Desire.TV.cz" tvg-name="Desire TV" tvg-logo="https://adult-tv-channels.click/assets/images/desire-tv.png" video-track="1024x576" group-title="MPD",Desire TV
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_desire/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Dorcel.TV.cz" tvg-name="Dorcel TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Dorcel_TV.svg/1280px-Dorcel_TV.svg.png" video-track="1024x576" group-title="MPD",Dorcel
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_dorcel/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Dorcel.XXX.cz" tvg-name="Dorcel XXX" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo-Dorcelxxx.png/800px-Logo-Dorcelxxx.png" video-track="1024x576" group-title="MPD",Dorcel XXX
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_dorcel_xxx/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Brazzers.TV.Europe.sk" tvg-name="Brazzers TV Europe" tvg-logo="https://static.wikia.nocookie.net/tvfanon6528/images/1/18/Brazzers_TV_%282014-.n.v.%29.png" video-track="1024x576" group-title="MPD",Brazzers TV Europe
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_brazzers_europe/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Dusk.TV.sk" tvg-name="Dusk TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Dusk_TV.svg/1280px-Dusk_TV.svg.png" video-track="1024x576" group-title="MPD",Dusk TV
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_dusk/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="True.Amateurs.HD.sk" tvg-name="True Amateurs HD" tvg-logo="https://i.imgur.com/MbXypW8.jpeg" video-track="1024x576" group-title="MPD",True Amateurs
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_true_amateurs/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="LEO.TV.sk" tvg-name="Leo TV" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/02/leo-tv.png" video-track="1024x576" group-title="MPD",Leo TV
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_leo_tv/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Leo.TV.Gold.HD.sk" tvg-name="Loe TV Gold" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/03/leo-tv-gold.png" video-track="1024x576" group-title="MPD",Leo TV Gold
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_leo_gold/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Extasy.cz" tvg-name="Extasy" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/02/extasy.png" video-track="1024x576" group-title="MPD",Extasy
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_extasy/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Erox.HD.sk" tvg-name="Erox HD" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/02/erox-hd.png" video-track="1024x576" group-title="MPD",Erox
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_erox/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Eroxxx.HD.sk" tvg-name="Eroxxx HD" tvg-logo="https://spiintl.com/data/files/kcfinderUploadDir/images/eroxxx.png" video-track="1024x576" group-title="MPD",Eroxxx
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_eroxxx/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="Bang.U.hr" tvg-name="Bang U" tvg-logo="https://www.supernovabih.ba/wp-content/uploads/2022/07/TV_bang-u.png" video-track="1024x576" group-title="MPD",Bang U
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_bang_u/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://www.poda.cz/wp-content/uploads/2023/02/passionxxx.png" video-track="1024x576" group-title="MPD",Passion XXX
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_passion_xxx/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-logo="https://www.antik.sk/assets/img/channels/02b70e46c1fa0c211b4ab067aac32673.svg" group-title="MPD",Reality Kings TV
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Odin/88.4324.2.10 Safari/537.36 Model/Hisense-MT9602 VIDAA/6.0(Tesla;SmartTV;VS0732FC1;MTK9602/V0000.06.13K.O1124;HD;VS0732F;)","Referer":"https://webtv.sk/tv/"}
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://drm.antik.sk/widevine/key
+https://dash3.antik.sk/stream/hisi_reality_tv/playlist_cbcs.mpd
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/Z7trxue.png" group-title="MPD",PENTHOUSE
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=12ea2af43c32671ae610492a42eb9d3d:8c93d80f9aef8ff702743eafda810b91
+https://covoslivechannels2dash.clarovideo.com/Content/DASH_DASH_FK/Live/Channel(PENTHOUSE)/manifest.mpd
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/Z7trxue.png" group-title="MPD",SEXTREME
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=2979731ffd7c7827fe0070051f1c6e05:cfa5e8db9fbf97551474908d9f8e9a90
+https://covoslivechannels2dash.clarovideo.com/Content/DASH_DASH_FK/Live/Channel(SEXTREME)/manifest.mpd
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/1ryqkMd.png" group-title="MPD",PLAYBOY
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d6b8f1b33b0baa9d8ec0e11ff96a4edb:3eeb40842519f4d15086500280d6852e
+https://covoslivechannels2dash.clarovideo.com/Content/DASH_DASH_FK/Live/Channel(PLAYBOYHD)/manifest.mpd
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/Z7trxue.png" group-title="MPD",VENUS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=61f9258fccd4d4685cfe053e6ad55a2f:084761c25e58beb84cbebfa2f1e23469
+https://covoslivechannels2dash.clarovideo.com/Content/DASH_DASH_FK/Live/Channel(VENUS)/manifest.mpd
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/Z7trxue.png" group-title="MPD",SEXYHOT
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=29bbe17d85323f16aa9d2b3fb5bd8c0f:9576c7c27a1c36b82c78b57b0d4b4d84
+https://covoslivechannels2dash.clarovideo.com/Content/DASH_DASH_FK/Live/Channel(SEXYHOT_HD)/manifest.mpd
+
+#EXTINF:-1 tvg-id="" tvg-name="Playboy" tvg-logo="https://miamitv.com/images/680a4d6de878f_Miami%20TV%20Models.jpg" group-title="Adult TV",Miami TV Models
+#EXTVLCOPT:http-origin=https://miamitv.com
+#EXTVLCOPT:http-referrer=https://miamitv.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+https://59ec5453559f0.streamlock.net/miamitvmodels/smil:529634/playlist.m3u8
+
+#EXTINF:-1 group-title="Adult TV",HUSTLER HD
+http://193.111.244.35:7474/hustlerhd/manifest.m3u8
+#EXTINF:-1 group-title="Adult TV",Playboy TV
+http://190.11.225.124:5000/live/playboy_hd/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",PINK CLUB
+https://5f22d76e220e1.streamlock.net/canale7/canale7/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",PassionXXX HD
+https://5f22d76e220e1.streamlock.net/canale9/canale9/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Reality Kings TV
+http://88.212.7.11/live/test_realitykings_sd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Leo TV HD
+http://88.212.7.11/live/test_leo_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Digital Desire
+http://88.212.7.11/live/test_desire_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Brazzers TV Europe
+http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Dorcel TV HD
+http://88.212.7.11/live/test_dorcel_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Eroxxx HD
+http://88.212.7.11/live/test_eroxxx_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Erox
+http://88.212.7.11/live/test_erox_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Extasy TV
+http://88.212.7.11/live/test_extasy_hd_hevc/playlist.m3u8
+#EXTINF:-1 group-title="Adult TV",Babes TV
+http://88.212.7.11/live/test_basbes_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-id="Dusk" group-title="Adult TV", DUSK
+http://88.212.7.11/live/test_dusk_sd_hevc/playlist.m3u8
+
+
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2014" tvg-logo="http://epg.one/img2/2014.png" tvg-rec="3",Playboy
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/527/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4633" tvg-logo="http://epg.one/img2/4633.png",Eromania 4K
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/10049/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2021" tvg-logo="http://epg.one/img2/2021.png" tvg-rec="3",Brazzers TV Europe Россия
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/910/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2249" tvg-logo="http://epg.one/img2/2249.png",Blue Hustler
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/1064/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2320" tvg-logo="http://epg.one/img2/2320.png" tvg-rec="3",Redlight HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/242/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2321" tvg-logo="http://epg.one/img2/2321.png" tvg-rec="3",Private TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/243/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2322" tvg-logo="http://epg.one/img2/2322.png",Hustler HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/244/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2324" tvg-logo="http://epg.one/img2/2324.png" tvg-rec="3",Dorcel TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/245/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3140" tvg-logo="http://epg.one/img2/3140.png" tvg-rec="3",Babes TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/2161/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2528" tvg-logo="http://epg.one/img2/2528.png" tvg-rec="1",Vivid Red HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/2162/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2632" tvg-logo="http://epg.one/img2/2632.png" tvg-rec="3",Exxxotica HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/2397/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2775" tvg-logo="http://epg.one/img2/2775.png" tvg-rec="3",XXL
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/5009/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2776" tvg-logo="http://epg.one/img2/2776.png" tvg-rec="3",Penthouse Passion HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/5010/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2777" tvg-logo="http://epg.one/img2/2777.png" tvg-rec="3",Penthouse Gold HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/5011/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2779" tvg-logo="http://epg.one/img2/2779.png" tvg-rec="3",Penthouse Reality TV FHD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/5013/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2781" tvg-logo="http://epg.one/img2/2781.png" tvg-rec="3",Eroxxx HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/5015/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3222" tvg-logo="http://epg.one/img2/3222.png",SexArt HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6165/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3135" tvg-logo="http://epg.one/img2/3135.png",Adult Time
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6166/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3136" tvg-logo="http://epg.one/img2/3136.png",Red TV Anal
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6167/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3137" tvg-logo="http://epg.one/img2/3137.png",Analized HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6168/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3140" tvg-logo="http://epg.one/img2/3140.png",Babes HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6172/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3142" tvg-logo="http://epg.one/img2/3142.png",Bang Bros HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6173/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3143" tvg-logo="http://epg.one/img2/3143.png",Bang!
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6174/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3147" tvg-logo="http://epg.one/img2/3147.png",Blacked HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6178/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3150" tvg-logo="http://epg.one/img2/3150.png",Brazzers eXXtra
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6181/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3151" tvg-logo="http://epg.one/img2/3151.png",Brazzers HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6182/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3154" tvg-logo="http://epg.one/img2/3154.png",Cherry Pimps
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6185/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3155" tvg-logo="http://epg.one/img2/3155.png",Club Sweethearts HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6186/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3158" tvg-logo="http://epg.one/img2/3158.png",Cum Louder
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6189/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3160" tvg-logo="http://epg.one/img2/3160.png",Daughter Swap
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6191/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3161" tvg-logo="http://epg.one/img2/3161.png",Day with a Pornstar
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6192/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3162" tvg-logo="http://epg.one/img2/3162.png",DDF Busty
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6193/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3163" tvg-logo="http://epg.one/img2/3163.png",DDF Network
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6194/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3164" tvg-logo="http://epg.one/img2/3164.png",Digital Desire HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6195/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3165" tvg-logo="http://epg.one/img2/3165.png",Digital Playground HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6196/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3166" tvg-logo="http://epg.one/img2/3166.png",Dorcel Club
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6197/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3167" tvg-logo="http://epg.one/img2/3167.png",Porn Angels
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6198/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3168" tvg-logo="http://epg.one/img2/3168.png",Evil Angel HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6199/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3169" tvg-logo="http://epg.one/img2/3169.png",Evolved Fights
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6200/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3171" tvg-logo="http://epg.one/img2/3171.png",Fake Taxi HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6202/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3177" tvg-logo="http://epg.one/img2/3177.png",Fap TV Compilation
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6208/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3181" tvg-logo="http://epg.one/img2/3181.png",FemJoy
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6212/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3185" tvg-logo="http://epg.one/img2/3185.png",Got MYLF
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6216/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3186" tvg-logo="http://epg.one/img2/3186.png",DDF Hands on Hardcore
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6217/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3187" tvg-logo="http://epg.one/img2/3187.png",Hard X
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6218/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3190" tvg-logo="http://epg.one/img2/3190.png",Holed
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6221/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3191" tvg-logo="http://epg.one/img2/3191.png",Hot and Mean
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6222/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3192" tvg-logo="http://epg.one/img2/3192.png",Hot Guys Fuck
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6223/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3196" tvg-logo="http://epg.one/img2/3196.png",Lesbea
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6227/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3198" tvg-logo="http://epg.one/img2/3198.png",Lethal Hardcore
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6229/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3199" tvg-logo="http://epg.one/img2/3199.png",Little Asians HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6230/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3201" tvg-logo="http://epg.one/img2/3201.png",Lust Cinema
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6232/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3202" tvg-logo="http://epg.one/img2/3202.png",MetArt HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6233/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3204" tvg-logo="http://epg.one/img2/3204.png",Monsters of Cock
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6235/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3205" tvg-logo="http://epg.one/img2/3205.png",MYLF TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6236/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3206" tvg-logo="http://epg.one/img2/3206.png",Naughty America
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6237/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3207" tvg-logo="http://epg.one/img2/3207.png",Nubiles TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6238/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3211" tvg-logo="http://epg.one/img2/3211.png",Playboy Plus
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6242/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3212" tvg-logo="http://epg.one/img2/3212.png",Red TV Pornstar
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6243/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3213" tvg-logo="http://epg.one/img2/3213.png",Red TV POV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6244/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3225" tvg-logo="http://epg.one/img2/3225.png",Red TV Teen
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6256/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3226" tvg-logo="http://epg.one/img2/3226.png",Red TV Threesome
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6257/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3219" tvg-logo="http://epg.one/img2/3219.png",Red TV Rough
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6250/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3203" tvg-logo="http://epg.one/img2/3203.png",Red TV Milf
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6234/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3200" tvg-logo="http://epg.one/img2/3200.png",Red TV Live Cams
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6231/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3195" tvg-logo="http://epg.one/img2/3195.png",Red TV Latina
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6226/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3214" tvg-logo="http://epg.one/img2/3214.png",Private.com HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6245/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3215" tvg-logo="http://epg.one/img2/3215.png",Public Agent
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6246/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3216" tvg-logo="http://epg.one/img2/3216.png",Reality Kings HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6247/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3217" tvg-logo="http://epg.one/img2/3217.png",RK Prime
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6248/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3218" tvg-logo="http://epg.one/img2/3218.png",RK TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6249/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3221" tvg-logo="http://epg.one/img2/3221.png",Sex With Muslims
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6252/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3222" tvg-logo="http://epg.one/img2/3222.png",SexArt
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6253/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3224" tvg-logo="http://epg.one/img2/3224.png",SINematica
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6255/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3227" tvg-logo="http://epg.one/img2/3227.png",Tiny4K
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6258/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3228" tvg-logo="http://epg.one/img2/3228.png",Trans Angels
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6259/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3229" tvg-logo="http://epg.one/img2/3229.png",True Amateurs
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6260/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3230" tvg-logo="http://epg.one/img2/3230.png",Tushy HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6261/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3231" tvg-logo="http://epg.one/img2/3231.png",Tushy RAW HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6262/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3232" tvg-logo="http://epg.one/img2/3232.png",Visit-X TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6263/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3233" tvg-logo="http://epg.one/img2/3233.png",Vivid TV Europe
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6264/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3234" tvg-logo="http://epg.one/img2/3234.png",Vixen HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6265/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3235" tvg-logo="http://epg.one/img2/3235.png",We Live Together
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6266/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3236" tvg-logo="http://epg.one/img2/3236.png",White Boxxx
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6267/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3237" tvg-logo="http://epg.one/img2/3237.png",Wicked
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6268/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3238" tvg-logo="http://epg.one/img2/3238.png",Xpanded TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6269/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3239" tvg-logo="http://epg.one/img2/3239.png",Balkan Erotic
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6270/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7079" tvg-logo="http://epg.one/img2/7079.png",Red Lips
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6271/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4930" tvg-logo="http://epg.one/img2/4930.png",Leo TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6272/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3242" tvg-logo="http://epg.one/img2/3242.png",Extreme
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6273/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3244" tvg-logo="http://epg.one/img2/3244.png",HOT
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6275/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3246" tvg-logo="http://epg.one/img2/3246.png",Hot Pleasure
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6277/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3250" tvg-logo="http://epg.one/img2/3250.png",Red XXX
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6281/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3251" tvg-logo="http://epg.one/img2/3251.png",Sexy Hot
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6282/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3253" tvg-logo="http://epg.one/img2/3253.png",Venus
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6284/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3254" tvg-logo="http://epg.one/img2/3254.png",X-MO
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6285/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3255" tvg-logo="http://epg.one/img2/3255.png",XY Max HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6286/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3256" tvg-logo="http://epg.one/img2/3256.png",XY Mix HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6287/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3257" tvg-logo="http://epg.one/img2/3257.png",XY Plus HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6288/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2193" tvg-logo="http://epg.one/img2/2193.png",Erox HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6296/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3266" tvg-logo="http://epg.one/img2/3266.png",SuperOne HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/6298/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2324" tvg-logo="http://epg.one/img2/2324.png",Dorcel TV HD orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9064/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2322" tvg-logo="http://epg.one/img2/2322.png",Hustler HD orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9065/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2320" tvg-logo="http://epg.one/img2/2320.png",Redlight HD orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9066/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2015" tvg-logo="http://epg.one/img2/2015.png",Русская Ночь orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9344/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2632" tvg-logo="http://epg.one/img2/2632.png",Exxxotica HD orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9346/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="431" tvg-logo="http://epg.one/img2/431.png",Shot TV orig
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/9347/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3170" tvg-logo="http://epg.one/img2/3170.png",StrahTV Extasy HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/11051/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4787" tvg-logo="http://epg.one/img2/4787.png",StrahTV KinoXXX
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/11052/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4788" tvg-logo="http://epg.one/img2/4788.png",StrahTV Ох-Ах HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/11068/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4913" tvg-logo="http://epg.one/img2/4913.png",Alba XXX 1
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12106/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7721" tvg-logo="http://epg.one/img2/7721.png",Exotic 4k
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12107/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7722" tvg-logo="http://epg.one/img2/7722.png",Euro Girls On Girls
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12108/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7723" tvg-logo="http://epg.one/img2/7723.png",Erotica X
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12109/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7724" tvg-logo="http://epg.one/img2/7724.png",Erotic Spice
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12110/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7725" tvg-logo="http://epg.one/img2/7725.png",DP Fanatics
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12111/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4919" tvg-logo="http://epg.one/img2/4919.png",Pornbox Pure Mature HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12112/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2021" tvg-logo="http://epg.one/img2/2021.png",Brazzers TV Europe HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12113/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3266" tvg-logo="http://epg.one/img2/3266.png",SuperOne
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12121/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7726" tvg-logo="http://epg.one/img2/7726.png",Dirty Wives Club
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12122/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2526" tvg-logo="http://epg.one/img2/2526.png",French Lover
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12124/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4932" tvg-logo="http://epg.one/img2/4932.png",Meiden Van Holland
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12125/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7727" tvg-logo="http://epg.one/img2/7727.png",Dirty Masseur
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12128/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7729" tvg-logo="http://epg.one/img2/7729.png",Dirty Flix
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12130/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2324" tvg-logo="http://epg.one/img2/2324.png",Dorcel TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12131/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV",Kinky Family HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12133/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2014" tvg-logo="http://epg.one/img2/2014.png",Playboy LA
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12135/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4943" tvg-logo="http://epg.one/img2/4943.png",Passie XXX TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12136/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="9703" tvg-logo="http://epg.one/img2/9703.png",Devils Film HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12137/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7730" tvg-logo="http://epg.one/img2/7730.png",Deep Throat Sirens
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12138/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7731" tvg-logo="http://epg.one/img2/7731.png",Deep Lush
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12139/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7732" tvg-logo="http://epg.one/img2/7732.png",Dark X
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12140/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4948" tvg-logo="http://epg.one/img2/4948.png",Veraporn Group Sex
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12141/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4949" tvg-logo="http://epg.one/img2/4949.png",Veraporn Group Sex 2
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12142/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7733" tvg-logo="http://epg.one/img2/7733.png",Dane Jones
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12143/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7734" tvg-logo="http://epg.one/img2/7734.png",Dancing Bear
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12144/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7735" tvg-logo="http://epg.one/img2/7735.png",Dad Crush
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12154/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7736" tvg-logo="http://epg.one/img2/7736.png",Family Swap
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12155/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7737" tvg-logo="http://epg.one/img2/7737.png",Family Strokes
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12156/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7738" tvg-logo="http://epg.one/img2/7738.png",Cum4k UHD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12157/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7739" tvg-logo="http://epg.one/img2/7739.png",Cum Perfection
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12158/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3202" tvg-logo="http://epg.one/img2/3202.png",MetArt FHD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12160/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7741" tvg-logo="http://epg.one/img2/7741.png",Bratty Sis
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12161/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7742" tvg-logo="http://epg.one/img2/7742.png",Brand New Amateurs
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12162/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7743" tvg-logo="http://epg.one/img2/7743.png",Beate Uhse
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12163/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7744" tvg-logo="http://epg.one/img2/7744.png",BBC Pie
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12164/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="2313" tvg-logo="http://epg.one/img2/2313.png",Barely Legal TV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12165/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7746" tvg-logo="http://epg.one/img2/7746.png",Bang POV
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12166/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7747" tvg-logo="http://epg.one/img2/7747.png",Bang Bus
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12167/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7748" tvg-logo="http://epg.one/img2/7748.png",Banana Fever
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12168/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7749" tvg-logo="http://epg.one/img2/7749.png",Asshole Fever
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12169/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7750" tvg-logo="http://epg.one/img2/7750.png",Ass Parade
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12178/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7751" tvg-logo="http://epg.one/img2/7751.png",Anal Time
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12181/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7752" tvg-logo="http://epg.one/img2/7752.png",Anal Teen Angels
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12183/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7753" tvg-logo="http://epg.one/img2/7753.png",Anal Only
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12184/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4994" tvg-logo="http://epg.one/img2/4994.png",Hot Wife XXX
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12187/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3230" tvg-logo="http://epg.one/img2/3230.png",Tushy
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12188/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7754" tvg-logo="http://epg.one/img2/7754.png",Anal Mom
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12189/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7755" tvg-logo="http://epg.one/img2/7755.png",Anal 4K
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12190/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7756" tvg-logo="http://epg.one/img2/7756.png",Amateur Boxxx
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12191/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7757" tvg-logo="http://epg.one/img2/7757.png",All Anal
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12192/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7758" tvg-logo="http://epg.one/img2/7758.png",Alex Legend
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12193/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7759" tvg-logo="http://epg.one/img2/7759.png",Alba XXX 2 HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12194/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="4913" tvg-logo="http://epg.one/img2/4913.png",Alba XXX 1 HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12204/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="3133" tvg-logo="http://epg.one/img2/3133.png",21 Sextury
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/12205/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="5354" tvg-logo="http://epg.one/img2/5354.png",XXX Love's Berry HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/14140/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="5392" tvg-logo="http://epg.one/img2/5392.png",Yosso TV Sexy
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/14176/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="6320" tvg-logo="http://epg.one/img2/6320.png",Kinoshka Adult HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/18060/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="6228" tvg-logo="http://epg.one/img2/6228.png",BCU Charm HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/18053/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7251" tvg-logo="http://epg.one/img2/7251.png",CineMan ExExEx
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/20089/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="7252" tvg-logo="http://epg.one/img2/7252.png",CineMan ExExEx TWO
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/20090/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="8846" tvg-logo="http://epg.one/img2/8846.png",StrahTV Adult TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/31707/index.m3u8
+#EXTINF:-1 group-title="Adult IPTV" tvg-id="8847" tvg-logo="http://epg.one/img2/8847.png",StrahTV PlayBoyz TV HD
+http://ae325328.ucomist.net/iptv/Z3SWF9EL3YPX5N/31709/index.m3u8
+
+#EXTINF:-1 group-title="Cam TV",Rough
+http://cdn.adultiptv.net/rough.m3u8
+#EXTINF:-1 group-title="Cam TV",Gangbang
+http://cdn.adultiptv.net/gangbang.m3u8
+#EXTINF:-1 group-title="Cam TV",Compilation
+http://cdn.adultiptv.net/compilation.m3u8
+#EXTINF:-1 group-title="Cam TV",Brunette
+http://cdn.adultiptv.net/brunette.m3u8
+#EXTINF:-1 group-title="Cam TV",Blonde
+http://cdn.adultiptv.net/blonde.m3u8
+#EXTINF:-1 group-title="Cam TV",Anal
+http://cdn.adultiptv.net/anal.m3u8
+#EXTINF:-1 group-title="Cam TV",Live Cams
+http://cdn.adultiptv.net/livecams.m3u8
+#EXTINF:-1 group-title="Cam TV",Russian
+http://cdn.adultiptv.net/russian.m3u8
+#EXTINF:-1 group-title="Cam TV",Threesome
+http://cdn.adultiptv.net/threesome.m3u8
+#EXTINF:-1 group-title="Cam TV",Cuckold
+http://cdn.adultiptv.net/cuckold.m3u8
+#EXTINF:-1 group-title="Cam TV",Hardcore
+http://cdn.adultiptv.net/hardcore.m3u8
+#EXTINF:-1 group-title="Cam TV",Teen
+http://cdn.adultiptv.net/teen.m3u8
+#EXTINF:-1 group-title="Cam TV",Blowjob
+http://cdn.adultiptv.net/blowjob.m3u8
+#EXTINF:-1 group-title="Cam TV",POV
+http://cdn.adultiptv.net/pov.m3u8
+#EXTINF:-1 group-title="Cam TV",Latina
+http://cdn.adultiptv.net/latina.m3u8
+#EXTINF:-1 group-title="Cam TV",Interracial
+http://cdn.adultiptv.net/interracial.m3u8
+#EXTINF:-1 group-title="Cam TV",Big Ass
+http://cdn.adultiptv.net/bigass.m3u8
+#EXTINF:-1 group-title="Cam TV",Fetish
+http://cdn.adultiptv.net/fetish.m3u8
+#EXTINF:-1 group-title="Cam TV",Big Tits
+http://cdn.adultiptv.net/bigtits.m3u8
+#EXTINF:-1 group-title="Cam TV",Big Dick
+http://cdn.adultiptv.net/bigdick.m3u8
+#EXTINF:-1 group-title="Cam TV",MILF
+http://cdn.adultiptv.net/milf.m3u8
+#EXTINF:-1 group-title="Cam TV",Pornstar
+http://cdn.adultiptv.net/pornstar.m3u8
+#EXTINF:-1 group-title="Cam TV",Lesbian
+http://cdn.adultiptv.net/lesbian.m3u8
