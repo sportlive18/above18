@@ -2,26 +2,26 @@ name: Update desi Playlist
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # every 6 hours
-  workflow_dispatch:
+    - cron: '0 */6 * * *'    # runs every 6 hours
+  workflow_dispatch:          # manual trigger
   push:
     branches:
       - main
     paths:
-      - 'desi.py'
+      - 'desi.py'             # trigger only when desi.py changes
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: write         # needed to commit changes
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0      # full history for commit
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,7 +31,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pytz
+          # Install all required packages
+          pip install cloudscraper beautifulsoup4 lxml requests pytz
 
       - name: Run desi.py
         run: |
