@@ -7,19 +7,26 @@ import argparse
 import cloudscraper
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://kaamdesi.com"
-DELAY = 2
+DELAY = 0.5           # reduced from 2s
 BATCH_PAGES = 20
 REFRESH_PAGES = 2
 MAX_PAGE_LIMIT = 300
+MAX_WORKERS = 6       # parallel video-page fetches per listing page
+IFRAME_WORKERS = 3    # parallel iframe fetches
 
 STATE_FILE = "scraper_state.json"
 PLAYLIST_JSON = "playlist.json"
 PLAYLIST_M3U = "playlist.m3u"
+
+# Thread-local scraper so each thread has its own session
+_local = threading.local()
 
 
 # ==================== STATE ====================
@@ -77,13 +84,20 @@ def make_scraper():
     return s
 
 
+def get_scraper():
+    """Return a thread-local scraper instance."""
+    if not hasattr(_local, 'scraper'):
+        _local.scraper = make_scraper()
+    return _local.scraper
+
+
 def fetch(s, url, ref=None, tries=3):
     h = {}
     if ref:
         h['Referer'] = ref
     for attempt in range(tries):
         try:
-            r = s.get(url, timeout=30, headers=h, allow_redirects=True)
+            r = s.get(url, timeout=20, headers=h, allow_redirects=True)
             if r.status_code == 200:
                 return r.text
             if r.status_code == 404:
@@ -100,12 +114,14 @@ def fetch(s, url, ref=None, tries=3):
 def is_page_valid(html):
     if not html:
         return False
-    soup = BeautifulSoup(html, 'lxml')
-    title = soup.find('title')
-    if title:
-        t = title.get_text(strip=True).lower()
-        if '404' in t or 'not found' in t:
-            return False
+    # Fast string check before full parse
+    if '404' in html[:2000] or 'not found' in html[:2000].lower():
+        soup = BeautifulSoup(html, 'lxml')
+        title = soup.find('title')
+        if title:
+            t = title.get_text(strip=True).lower()
+            if '404' in t or 'not found' in t:
+                return False
     return True
 
 
@@ -280,17 +296,24 @@ def clean_title(title):
 
 # ==================== MP4 FINDING ====================
 
+# Precompile patterns once
+_MP4_PATTERNS = [
+    re.compile(r'(https?://[^\s"\'<>\\\)]+\.mp4[^\s"\'<>\\\)]*)', re.I),
+    re.compile(r'(https?:\\/\\/[^\s"\'<>]+\.mp4[^\s"\'<>]*)', re.I),
+    re.compile(r'(//[^\s"\'<>\\\)]+\.mp4[^\s"\'<>\\\)]*)', re.I),
+    re.compile(r'(https?%3A%2F%2F[^\s"\'<>&]+\.mp4[^\s"\'<>&]*)', re.I),
+    re.compile(r'(https?://server\d+\.mmsbee\d*\.[a-z]+/[^\s"\'<>\\\)]+\.mp4)', re.I),
+]
+_SCRIPT_MP4_PATTERN = re.compile(r'''["'](https?://[^"']+\.mp4[^"']*)["']''', re.I)
+_SCRIPT_ESC_PATTERN = re.compile(r'''["'](https?:\\/\\/[^"']+\.mp4[^"']*)["']''', re.I)
+
+
 def find_mp4(html, page_url):
     found = set()
-    patterns = [
-        r'(https?://[^\s"\'<>\\\)]+\.mp4[^\s"\'<>\\\)]*)',
-        r'(https?:\\/\\/[^\s"\'<>]+\.mp4[^\s"\'<>]*)',
-        r'(//[^\s"\'<>\\\)]+\.mp4[^\s"\'<>\\\)]*)',
-        r'(https?%3A%2F%2F[^\s"\'<>&]+\.mp4[^\s"\'<>&]*)',
-        r'(https?://server\d+\.mmsbee\d*\.[a-z]+/[^\s"\'<>\\\)]+\.mp4)',
-    ]
-    for p in patterns:
-        for m in re.findall(p, html, re.I):
+
+    # Fast regex scan on raw HTML (no parse needed)
+    for p in _MP4_PATTERNS:
+        for m in p.findall(html):
             url = m.replace('\\/', '/')
             if url.startswith('//'):
                 url = 'https:' + url
@@ -300,56 +323,87 @@ def find_mp4(html, page_url):
             if url:
                 found.add(url)
 
+    # Parse once, reuse soup
     soup = BeautifulSoup(html, 'lxml')
+
     for a in soup.find_all('a', href=True):
         href = a['href'].strip()
         if '.mp4' in href.lower():
             found.add(clean_url(urljoin(page_url, href)))
+
     for tag in soup.find_all(['video', 'source']):
         for attr in ['src', 'data-src', 'data-lazy-src']:
             val = tag.get(attr, '').strip()
             if val and '.mp4' in val.lower():
                 found.add(clean_url(urljoin(page_url, val)))
+
     for tag in soup.find_all(True):
         for a in ['href', 'src', 'data-src', 'data-url', 'data-file',
                   'data-video', 'data-mp4', 'content', 'value']:
             val = tag.get(a, '')
             if isinstance(val, str) and '.mp4' in val.lower():
                 found.add(clean_url(urljoin(page_url, val)))
+
     for script in soup.find_all('script'):
         txt = script.string or ''
-        if not txt:
+        if not txt or '.mp4' not in txt.lower():
             continue
-        for m in re.findall(r'''["'](https?://[^"']+\.mp4[^"']*)["']''', txt, re.I):
+        for m in _SCRIPT_MP4_PATTERN.findall(txt):
             found.add(clean_url(m.replace('\\/', '/')))
-        for m in re.findall(r'''["'](https?:\\/\\/[^"']+\.mp4[^"']*)["']''', txt, re.I):
+        for m in _SCRIPT_ESC_PATTERN.findall(txt):
             found.add(clean_url(m.replace('\\/', '/')))
+
     found.discard('')
     return list(found)
 
 
-def find_iframe_mp4(html, page_url, scraper, depth=0):
-    if depth > 3:
+def _fetch_iframe(args):
+    """Fetch a single iframe URL and return its mp4s. Used in thread pool."""
+    iurl, page_url, depth = args
+    s = get_scraper()
+    time.sleep(0.3)
+    ih = fetch(s, iurl, ref=page_url, tries=2)
+    if not ih:
         return []
-    results = []
+    results = find_mp4(ih, iurl)
+    # One level of nested iframes only
+    if depth < 2:
+        nested = _collect_iframes(ih, iurl, depth + 1)
+        with ThreadPoolExecutor(max_workers=IFRAME_WORKERS) as ex:
+            for r in ex.map(_fetch_iframe, nested):
+                results.extend(r)
+    return results
+
+
+def _collect_iframes(html, page_url, depth):
+    """Return list of (iurl, page_url, depth) tuples for iframes in html."""
     soup = BeautifulSoup(html, 'lxml')
+    tasks = []
+    skip = ['google', 'facebook', 'twitter', 'doubleclick', 'adsense', 'disqus']
     for iframe in soup.find_all('iframe'):
-        src = iframe.get('src', '') or iframe.get('data-src', '') or iframe.get('data-lazy-src', '')
-        if not src or src.startswith('about:') or src.startswith('javascript:'):
+        src = (iframe.get('src') or iframe.get('data-src') or iframe.get('data-lazy-src') or '').strip()
+        if not src or src.startswith(('about:', 'javascript:')):
             continue
-        iurl = urljoin(page_url, src.strip())
-        skip = ['google', 'facebook', 'twitter', 'doubleclick', 'adsense', 'disqus']
+        iurl = urljoin(page_url, src)
         if any(s in iurl.lower() for s in skip):
             continue
         if '.mp4' in iurl.lower():
-            results.append(clean_url(iurl))
+            # Direct mp4 link in src — handle inline
+            tasks.append((iurl, page_url, depth))
             continue
-        log.info(f"  {'  '*depth}↳ iframe[{depth+1}]: {iurl[:80]}")
-        time.sleep(1)
-        ih = fetch(scraper, iurl, ref=page_url, tries=2)
-        if ih:
-            results.extend(find_mp4(ih, iurl))
-            results.extend(find_iframe_mp4(ih, iurl, scraper, depth + 1))
+        tasks.append((iurl, page_url, depth))
+    return tasks
+
+
+def find_iframe_mp4(html, page_url):
+    """Parallel iframe mp4 discovery (replaces recursive sequential version)."""
+    tasks = _collect_iframes(html, page_url, 0)
+    if not tasks:
+        return []
+    results = []
+    with ThreadPoolExecutor(max_workers=IFRAME_WORKERS) as ex:
+        for r in ex.map(_fetch_iframe, tasks):
+            results.extend(r)
     return results
 
 
@@ -448,6 +502,49 @@ def save_playlist(entries):
     log.info(f"💾 Saved {len(entries)} videos")
 
 
+# ==================== PROCESS ONE VIDEO PAGE ====================
+
+def process_item(item, page_url, existing_urls, lock):
+    """Fetch one video page and return an entry dict or None. Thread-safe."""
+    s = get_scraper()
+    time.sleep(DELAY)
+
+    ih = fetch(s, item['page_url'], ref=page_url)
+    if not ih:
+        log.warning(f"  ❌ Fetch failed: {item['title'][:40]}")
+        return None
+
+    pt = page_title(ih, fallback=item['title'])
+    pth = page_thumb(ih, item['page_url'], fallback=item.get('thumbnail', ''))
+
+    mp4s = find_mp4(ih, item['page_url'])
+    mp4s.extend(find_iframe_mp4(ih, item['page_url']))
+    mp4s = list(set(filter(None, mp4s)))
+
+    if not mp4s:
+        log.warning(f"  ❌ No MP4: {pt[:45]}")
+        return None
+
+    best = pick_best(mp4s)
+    if not best:
+        return None
+
+    with lock:
+        if best in existing_urls:
+            log.info(f"  ⏭ Duplicate: {pt[:45]}")
+            return None
+        existing_urls.add(best)
+
+    log.info(f"  ✅ {pt[:50]}")
+    log.info(f"     {best[:70]}")
+    return {
+        'title': pt,
+        'stream_url': best,
+        'page_url': item['page_url'],
+        'thumbnail': pth
+    }
+
+
 # ==================== SCRAPE ====================
 
 def scrape_pages(scraper, start_page, num_pages, existing_urls):
@@ -456,6 +553,7 @@ def scrape_pages(scraper, start_page, num_pages, existing_urls):
     end = start_page + num_pages - 1
     reached_end = False
     empty_streak = 0
+    lock = threading.Lock()
 
     while current <= end and current <= MAX_PAGE_LIMIT:
         page_url = f"{BASE_URL}/page/{current}/" if current > 1 else BASE_URL + "/"
@@ -486,42 +584,20 @@ def scrape_pages(scraper, start_page, num_pages, existing_urls):
         else:
             empty_streak = 0
 
-        count = 0
-        for idx, item in enumerate(listings):
-            log.info(f"\n  [{idx+1}/{len(listings)}] {item['title'][:55]}")
+        # ── Parallel fetch of all video pages on this listing page ──
+        page_entries = []
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            futures = {
+                ex.submit(process_item, item, page_url, existing_urls, lock): item
+                for item in listings
+            }
+            for fut in as_completed(futures):
+                result = fut.result()
+                if result:
+                    page_entries.append(result)
 
-            time.sleep(DELAY)
-            ih = fetch(scraper, item['page_url'], ref=page_url)
-            if not ih:
-                log.warning("  ❌ Fetch failed")
-                continue
-
-            pt = page_title(ih, fallback=item['title'])
-            pth = page_thumb(ih, item['page_url'], fallback=item.get('thumbnail', ''))
-
-            mp4s = find_mp4(ih, item['page_url'])
-            mp4s.extend(find_iframe_mp4(ih, item['page_url'], scraper))
-            mp4s = list(set(filter(None, mp4s)))
-
-            if mp4s:
-                best = pick_best(mp4s)
-                if best and best not in existing_urls:
-                    new_entries.append({
-                        'title': pt,
-                        'stream_url': best,
-                        'page_url': item['page_url'],
-                        'thumbnail': pth
-                    })
-                    existing_urls.add(best)
-                    count += 1
-                    log.info(f"  ✅ NEW [{len(new_entries)}] {pt[:45]}")
-                    log.info(f"     {best[:70]}")
-                elif best in existing_urls:
-                    log.info(f"  ⏭ Duplicate")
-            else:
-                log.warning(f"  ❌ No MP4")
-
-        log.info(f"\n  Page {current}: +{count} videos (batch total: {len(new_entries)})")
+        new_entries.extend(page_entries)
+        log.info(f"\n  Page {current}: +{len(page_entries)} videos (batch total: {len(new_entries)})")
 
         if not has_next_page(html, current):
             log.info(f"🛑 No next page after {current} — END OF SITE")
@@ -539,20 +615,24 @@ def scrape_pages(scraper, start_page, num_pages, existing_urls):
 
 def main():
     parser = argparse.ArgumentParser()
+    global MAX_WORKERS
     parser.add_argument('--mode', choices=['batch', 'refresh', 'reset'], default='batch')
     parser.add_argument('--start-page', type=int, default=None,
                         help='Force start from this page number')
+    parser.add_argument('--workers', type=int, default=MAX_WORKERS,
+                        help=f'Parallel workers per listing page (default: {MAX_WORKERS})')
     args = parser.parse_args()
+
+    MAX_WORKERS = args.workers
 
     mode = args.mode
     state = load_state()
 
     log.info(f"{'='*60}")
-    log.info(f"MODE: {mode.upper()}")
+    log.info(f"MODE: {mode.upper()} | WORKERS: {MAX_WORKERS}")
     log.info(f"State: last_page={state['last_page']}, completed={state['completed']}, videos={state['total_videos']}")
     log.info(f"{'='*60}")
 
-    # Handle reset
     if mode == 'reset':
         log.info("🔄 FULL RESET")
         state = {'last_page': 0, 'completed': False, 'total_videos': 0,
@@ -574,7 +654,6 @@ def main():
             log.info("✅ Already completed all pages → switching to refresh")
             mode = 'refresh'
         else:
-            # Determine start page
             if args.start_page is not None:
                 start = args.start_page
                 log.info(f"📌 Forced start page: {start}")
@@ -592,11 +671,10 @@ def main():
             scraper, 1, REFRESH_PAGES, existing_urls
         )
 
-    # Merge
     if mode == 'refresh':
-        all_entries = new_entries + existing  # new on top
+        all_entries = new_entries + existing
     else:
-        all_entries = existing + new_entries  # append
+        all_entries = existing + new_entries
 
     all_entries = dedup(all_entries)
 
