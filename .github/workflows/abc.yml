@@ -1,0 +1,45 @@
+name: Update Playlist
+
+on:
+  schedule:
+    # Runs every day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Allows manual trigger from the Actions tab
+
+jobs:
+  generate-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'  # Use the latest Python 3
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # If you have a requirements.txt, install from it
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Otherwise, install common packages your script might need (e.g., requests)
+          # pip install requests
+
+      - name: Run sniffer.py
+        run: |
+          python sniffer.py \
+            --models "angela-white,lexis-star,lena-paul,lana-rhoades,violet-myers,penny-barber,sheena-ryder,ava-addams,comatoss,brandi-love,kayla-kayden,ariella-ferrera" \
+            --max 20 \
+            --group-title "⭐ Favorites"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u playlist.json
+          git diff --staged --quiet || git commit -m "Update playlists [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
