@@ -8,6 +8,8 @@ on:
 jobs:
   generate-playlist:
     runs-on: ubuntu-latest
+    permissions:                         # <--- ADD THIS
+      contents: write                    # <--- grant push permission
 
     steps:
       - name: Checkout repository
