@@ -2,7 +2,7 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: '0 0 * * *'          # daily at midnight UTC
+    - cron: 0 */1 * * *          
   workflow_dispatch:             # manual trigger
 
 jobs:
