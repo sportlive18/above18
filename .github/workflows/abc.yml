@@ -1,22 +1,19 @@
-name: Update Playlist
+  name: Update Playlist
 
 on:
   schedule:
-    - cron: 0 */1 * * *
-  workflow_dispatch:
+    - cron: '0 */1 * * *'          # every hour
+  workflow_dispatch:               # manual trigger
 
 jobs:
   generate-playlist:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write              # needed to push
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Pull latest changes
-        run: git pull --rebase origin main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -46,7 +43,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add playlist.m3u playlist.json
-          git diff --staged --quiet || {
+          if ! git diff --staged --quiet; then
             git commit -m "Update playlists [skip ci]"
+            # Pull any remote changes and rebase our commit on top,
+            # automatically resolving conflicts by keeping our version
+            git pull --rebase -X ours origin main
             git push
-          }
+          fi
