@@ -1,49 +1,75 @@
-name: Update Playlist
+name: Update Playlists
 
 on:
   schedule:
-    - cron: 0 */1 * * *          
-  workflow_dispatch:             # manual trigger
+    # Run daily at a specific time (adjust as needed)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
 
 jobs:
-  generate-playlist:
+  update-playlists:
     runs-on: ubuntu-latest
-    permissions:                         # <--- ADD THIS
-      contents: write                    # <--- grant push permission
-
+    
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          fetch-depth: 0 # Fetch full history to avoid shallow clone issues
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run sniffer.py
-        run: |
-          python sniffer.py \
-            --models "angela-white,ella-knox,alina-rai,natasha-nice,lena-paul,lana-rhoades,violet-myers,penny-barber,mia-khalifa,sheena-ryder,ava-addams,comatoss,brandi-love,kayla-kayden,alexis-fawx,alexia-anders,nicolette-shea,ariella-ferrera,reagan-foxx,kendra-lust,lexi-luna" \
-            --max 20 \
-            --group-title "⭐ Favorites" \
-            --headless
-
-      - name: Commit and push if changed
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add playlist.m3u playlist.json
-          git diff --staged --quiet || git commit -m "Update playlists [skip ci]"
-          git push
+
+      - name: Set up Node.js (if needed)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Adjust to your Node version
+
+      - name: Install dependencies (if needed)
+        run: npm ci
+        # Remove this if not using npm
+
+      - name: Update playlists
+        run: |
+          # Add your playlist update script here
+          # Example: node scripts/update-playlists.js
+          echo "Updating playlists..."
+
+      - name: Check for changes
+        id: verify_changed_files
+        run: |
+          if git diff-index --quiet HEAD --; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.verify_changed_files.outputs.changed == 'true'
+        run: |
+          git add -A
+          git commit -m "Update playlists [skip ci]"
+
+      - name: Pull latest changes
+        if: steps.verify_changed_files.outputs.changed == 'true'
+        run: |
+          git pull --rebase origin main || git pull --rebase origin master
+
+      - name: Push changes
+        if: steps.verify_changed_files.outputs.changed == 'true'
+        run: |
+          git push origin main || git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Handle push failure with force option (optional)
+        if: failure()
+        run: |
+          # Only use force if absolutely necessary and understand the implications
+          git push -u origin main --force-with-lease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
