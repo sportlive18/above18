@@ -2,20 +2,20 @@ name: Update Playlist
 
 on:
   schedule:
-    - cron: 0 */1 * * *
-  workflow_dispatch:
+    - cron: '0 */1 * * *'      # Runs every hour
+  workflow_dispatch:            # Allows manual trigger
 
 jobs:
   generate-playlist:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write           # Needed to push back to the repo
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Pull latest changes
+      - name: Pull latest changes (initial sync)
         run: git pull --rebase origin main
 
       - name: Set up Python
@@ -45,8 +45,28 @@ jobs:
         run: |
           git config --global user.name "sportlive18"
           git config --global user.email "271363488+sportlive18@users.noreply.github.com"
+
           git add playlist.m3u playlist.json
-          git diff --staged --quiet || {
+
+          # Only commit and push if there are actual changes
+          if ! git diff --staged --quiet; then
             git commit -m "Update playlists [skip ci]"
-            git push
-          }
+
+            # SECOND pull with rebase – this catches any remote commits
+            # that happened while our script was running.
+            git pull --rebase origin main
+
+            # Push with retry logic (up to 3 attempts) for network flakiness
+            for i in {1..3}; do
+              if git push; then
+                echo "Push succeeded!"
+                break
+              else
+                echo "Push failed (attempt $i). Rebasing and retrying..."
+                git pull --rebase origin main
+                sleep 2
+              fi
+            done
+          else
+            echo "No changes to commit."
+          fi
