@@ -36,7 +36,7 @@ jobs:
       - name: Run sniffer.py
         run: |
           python sniffer.py \
-            --models "angela-white,ella-knox,alina-rai,natasha-nice,lena-paul,lana-rhoades,violet-myers,penny-barber,mia-khalifa,sheena-ryder,ava-addams,comatoss,brandi-love,kayla-kayden,alexis-fawx,alexia-anders,nicolette-shea,ariella-ferrera,reagan-foxx,kendra-lust,lexi-luna" \
+            --models "angela-white,ella-knox,alina-rai,natasha-nice,rachael-cavalli,lana-rhoades,violet-myers,penny-barber,mia-khalifa,sheena-ryder,ava-addams,comatoss,brandi-love,kayla-kayden,alexis-fawx,alexia-anders,nicolette-shea,ariella-ferrera,reagan-foxx,kendra-lust,lexi-luna" \
             --max 20 \
             --group-title "⭐ Favorites" \
             --headless
